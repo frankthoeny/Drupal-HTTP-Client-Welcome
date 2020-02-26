@@ -1,0 +1,7 @@
+http_client_welcome.all_posts:
+  path: 'all-posts'
+  defaults:
+    _controller: '\Drupal\http_client_welcome\Controller\HttpClientWelcomeController::allPosts'
+    _title: 'All Posts'
+  requirements:
+    _permission: 'access content'

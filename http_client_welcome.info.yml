@@ -1,0 +1,9 @@
+name: HTTP Client Welcome
+type: module
+description: HTTP Service API module for HTTP Client Manager.
+package: custom
+core: 8.x
+dependencies:
+  - drupal:system (>=8.4)
+  - core/jquery
+  - http_client_manager:http_client_manager

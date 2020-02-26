@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains http_client_welcome.module.
+ */
+
+
+/**
+ * Implements hook_page_attachments().
+ * @param array $attachments
+ */
+function http_client_welcome_page_attachments(array &$attachments) {    
+    //$attachments['#attached']['library'][] = 'welcome/jquery-cdn';
+    $attachments['#attached']['library'][] = 'welcome/popper-cdn';
+    $attachments['#attached']['library'][] = 'welcome/bootstrap-cdn';
+    $attachments['#attached']['library'][] = 'welcome/font-awesome';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function http_client_welcome_theme($existing, $type, $theme, $path) {
+  return [
+    'http_client_welcome_posts_list' => [
+      'variables' => [
+        'posts'  => [
+          'side' => NULL,
+          'year' => NULL,
+          'miles' => NULL,
+          'gas' => NULL,
+        ],       
+      ],
+    ],    
+  ];
+}

@@ -1,0 +1,15 @@
+services:
+  welcome_api.http_client:
+    parent: http_client_manager.client_base
+    arguments: ['welcome_services']
+  
+  http_client_welcome.subscriber:
+    class: Drupal\http_client_welcome\EventSubscriber\HttpClientManagerExampleSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  http_client_welcome.api_wrapper.posts:
+    class: Drupal\http_client_welcome\Plugin\HttpServiceApiWrapper\HttpServiceApiWrapperPosts
+    parent: http_client_manager.api_wrapper.base
+    tags:
+      - { name: 'http_service_api_wrapper', api: 'posts'}

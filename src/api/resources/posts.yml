@@ -1,0 +1,30 @@
+operations:
+  FindPosts:
+    httpMethod: "GET"
+    uri: "driving.json"
+    summary: "Find all the available posts."
+    responseClass: "FindPostsOutput"
+
+models:
+  Post:
+    type: "object"
+    location: "json"
+    properties:
+      side:
+        type: "string"
+        location: "json"       
+      year:
+        type: "string"
+        location: "json"       
+      miles:
+        type: "string"
+        location: "json"        
+      gas:
+        type: "string"
+        location: "json"
+               
+  FindPostsOutput:
+    type: "array"
+    location: "json"
+    items:
+      "$ref": "Post"
