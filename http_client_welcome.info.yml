@@ -5,4 +5,3 @@ package: custom
 core: 8.x
 dependencies:
   - drupal:system (>=8.4)
-  - http_client_manager:http_client_manager
