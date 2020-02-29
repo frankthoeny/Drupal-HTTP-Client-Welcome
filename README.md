@@ -4,7 +4,7 @@ My Drupal 8 custom module requires the Drupal 8 contributed module HTTP Client M
 ## How to Start
 Steps to install my custom module and 
 
-1. Download and Install [Drupal 8](https://www.drupal.org/docs/8/install) or Install through Composer.
+1. Download and Install [Drupal 8](https://www.drupal.org/docs/8/install) or Install through Composer [Drupal project](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies).
 2. Download and Install [HTTP Client Manager](https://www.drupal.org/project/http_client_manager) through Composer as recommended.
 3. Clone and Install [http_client_welcome](https://github.com/frankthoeny/http_client_welcome)
 
