@@ -75,9 +75,17 @@ class HttpClientWelcomeController extends ControllerBase {
    *    The service response.
    */
   public function allPosts() {
+    
     $build = [
       '#theme' => 'http_client_welcome_posts_list',
       '#posts' => NULL,
+      '#attached' => [
+        'library' => [
+          'welcome/popper-cdn',
+          'welcome/bootstrap-cdn',
+          'welcome/font-awesome',
+        ],
+      ],
     ];
     
     $request = HttpConfigRequest::load('find_posts');

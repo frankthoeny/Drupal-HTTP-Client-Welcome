@@ -7,17 +7,6 @@
 
 
 /**
- * Implements hook_page_attachments().
- * @param array $attachments
- */
-function http_client_welcome_page_attachments(array &$attachments) {    
-    //$attachments['#attached']['library'][] = 'welcome/jquery-cdn';
-    $attachments['#attached']['library'][] = 'welcome/popper-cdn';
-    $attachments['#attached']['library'][] = 'welcome/bootstrap-cdn';
-    $attachments['#attached']['library'][] = 'welcome/font-awesome';
-}
-
-/**
  * Implements hook_theme().
  */
 function http_client_welcome_theme($existing, $type, $theme, $path) {
