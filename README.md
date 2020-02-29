@@ -18,4 +18,5 @@ Styling with Bootstrap not modified.
 Front end Built with HTML and Twig.
 
 ### Thank You
+Thanks for coming!
 
