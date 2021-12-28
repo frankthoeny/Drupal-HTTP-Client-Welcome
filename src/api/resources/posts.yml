@@ -1,9 +1,20 @@
-operations:
+operations:  
   FindPosts:
     httpMethod: "GET"
-    uri: "driving.json"
+    uri: "vega/vega/master/docs/data/driving.json"
     summary: "Find all the available posts."
-    responseClass: "FindPostsOutput"
+    responseClass: "PostList"
+  FindPost:
+    httpMethod: "GET"
+    uri: "posts/{postId}"
+    summary: "Find a single post by id."
+    responseClass: "Post"
+    parameters:
+      postId:
+        location: "uri"
+        description: "Filter posts by id"
+        required: true
+        type: "string"
 
 models:
   Post:
@@ -21,9 +32,8 @@ models:
         location: "json"        
       gas:
         type: "string"
-        location: "json"
-               
-  FindPostsOutput:
+        location: "json"               
+  PostList:
     type: "array"
     location: "json"
     items:
