@@ -1,4 +1,4 @@
-name: "[WELCOME] - Http Services API"
+name: "[YAML] - Http Services API"
 apiVersion: "2.0"
 description: "Client wrapper for the Content Services API."
 imports:
