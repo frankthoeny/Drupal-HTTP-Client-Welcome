@@ -1,7 +1,7 @@
-http_client_welcome.all_posts:
-  path: 'all-posts'
+http_client_welcome.find_posts:
+  path: 'find-posts'
   defaults:
-    _controller: '\Drupal\http_client_welcome\Controller\HttpClientWelcomeController::allPosts'
-    _title: 'All Posts'
+    _controller: '\Drupal\http_client_welcome\Controller\HttpClientWelcomeController::findPosts'
+    _title: 'Find posts'
   requirements:
     _permission: 'access content'
