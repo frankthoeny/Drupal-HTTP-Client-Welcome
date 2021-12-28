@@ -36,7 +36,7 @@ class HttpClientWelcomeSubscriber implements EventSubscriberInterface {
     }
 
     $handler = $event->getHandlerStack();
-    $middleware = Middleware::mapRequest([$this, 'addExampleServiceHttpHeader']);
+    $middleware = Middleware::mapRequest([$this, 'addWelcomeServiceHttpHeader']);
     $handler->push($middleware, 'welcome_services');
   }
 
