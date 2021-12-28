@@ -83,10 +83,7 @@ class HttpClientWelcomeController extends ControllerBase {
     ];    
     
     // Call method usage.
-    $response = $client->call($command, [
-      'limit' => '10', 
-      'sort' => 'desc',
-    ]);
+    $response = $client->call($command, $params);
     
     // Twig Template/Style Library.
     $build = [
@@ -101,7 +98,7 @@ class HttpClientWelcomeController extends ControllerBase {
     
     // Loop data array.
     $response = $response->toArray();
-    foreach ($response as $id => $post) {
+    foreach ($response as $post) {
       $build['#posts'][] = $this->buildPostResponse($post);
     }
 
