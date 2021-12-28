@@ -1,4 +1,9 @@
 # http_client_welcome.libraries.yml
+welcome-styles:
+  css:
+    version: 1.x
+    theme:
+      'css/http_client_welcome.css' : {}
 bootstrap-cdn:
   dependencies:
       - core/jquery  
