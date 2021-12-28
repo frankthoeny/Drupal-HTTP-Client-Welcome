@@ -2,4 +2,4 @@ welcome_services:
   title: "[WELCOME] - Contents Services API"
   api_path: "src/api/welcome_services.yml"
   config:
-    base_uri: "https://raw.githubusercontent.com/vega/vega/master/docs/data/"
+    base_uri: "https://raw.githubusercontent.com"
