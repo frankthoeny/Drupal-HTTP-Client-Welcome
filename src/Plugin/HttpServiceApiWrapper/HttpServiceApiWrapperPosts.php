@@ -20,26 +20,6 @@ class HttpServiceApiWrapperPosts extends HttpServiceApiWrapperBase {
   }
 
   /**
-   * Create Post.
-   *
-   * @param string $title
-   *   The Post title.
-   * @param $body
-   *   The Post body.
-   *
-   * @return array
-   *   The service response array.
-   */
-  public function createPost($title, $body) {
-    $args = [
-      'userId' => $this->currentUser->id(),
-      'title' => $title,
-      'body' => $body,
-    ];
-    return $this->call(Posts::CREATE_POST, $args)->toArray();
-  }
-
-  /**
    * Find Posts.
    *
    * @return array
@@ -59,24 +39,7 @@ class HttpServiceApiWrapperPosts extends HttpServiceApiWrapperBase {
    *   An array representing the Post matching the provided id.
    */
   public function findPost($postId) {
-    $args = [
-      'postId' => (int) $postId,
-    ];
+    $args = NULL;
     return $this->call(Posts::FIND_POST, $args)->toArray();
   }
-
-  /**
-   * Find Comments.
-   *
-   * @param null|int $postId
-   *   The Post id from which extract the related Comments.
-   *
-   * @return array
-   *   An array of Comments related to the given Post.
-   */
-  public function findComments($postId = NULL) {
-    $args = is_null($postId) ? [] : ['postId' => (int) $postId];
-    return $this->call(Posts::FIND_COMMENTS, $args)->toArray();
-  }
-
 }
