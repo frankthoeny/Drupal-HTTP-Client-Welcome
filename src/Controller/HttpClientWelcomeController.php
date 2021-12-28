@@ -11,7 +11,7 @@ use Drupal\http_client_manager\Plugin\HttpServiceApiWrapper\HttpServiceApiWrappe
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class ExampleController.
+ * Class HttpClientWelcomeController.
  *
  * @package Drupal\http_client_welcome\Controller
  */
@@ -69,42 +69,73 @@ class HttpClientWelcomeController extends ControllerBase {
   }
 
   /**
-   * All posts.
-   * 
+   * Find posts.
+   *
    * @return array
-   *    The service response.
+   *   The service response.
    */
-  public function allPosts() {
+  public function findPosts() {
+    $client = $this->getClient();
+    $command = "FindPosts";
+    $params = [
+      'limit' => '10', 
+      'sort' => 'desc',
+    ];    
     
+    // Call method usage.
+    $response = $client->call($command, [
+      'limit' => '10', 
+      'sort' => 'desc',
+    ]);
+    
+    // Twig Template/Style Library.
     $build = [
       '#theme' => 'http_client_welcome_posts_list',
       '#posts' => NULL,
-      '#attached' => [
+      '#attached' => [     
         'library' => [
-          'welcome/popper-cdn',
-          'welcome/bootstrap-cdn',
-          'welcome/font-awesome',
+          'http_client_welcome/welcome-styles',
         ],
       ],
     ];
     
-    $request = HttpConfigRequest::load('find_posts');
+    // Loop data array.
+    $response = $response->toArray();
+    foreach ($response as $id => $post) {
+      $build['#posts'][] = $this->buildPostResponse($post);
+    }
 
-    if ($request) { 
-      $posts = $request->execute();
+    $build['#posts'][] = $posts;
+    return $build;
+  }
 
-      foreach ($posts as $post) {
-        $build['#posts'] = [
-          'side' => $post['side'],
-          'year' => $post['year'],
-          'miles' => $post['miles'],
-          'gas' => $post['gas'],
-        ];
-      }
+  /**
+   * Build Post response.
+   *
+   * @param array $post
+   *   The Post response item.
+   *
+   * @return array
+   *   A render array of the post.
+   */
+  protected function buildPostResponse(array $post) {
+    $output = [
+      'side' => $post['side'],
+      'year' => $post['year'],
+      'miles' => $post['miles'],
+      'gas' => $post['gas'],
+    ];
+    return $output;
+  }
 
-      $build['#posts'] = $posts; 
-      return $build; 
-    }     
+  /**
+   * Check Token module.
+   */
+  protected function checkTokenModule() {
+    if (!$this->moduleHandler()->moduleExists('token')) {
+      $message = $this->t('Install the Token module in order to use tokens inside your HTTP Config Requests.');
+      \Drupal::messenger()->addWarning($message);
+    }
   }
 
 }
