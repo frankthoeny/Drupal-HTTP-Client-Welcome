@@ -9,10 +9,12 @@ Steps to install my custom module and
 3. Clone and Install [http_client_welcome](https://github.com/frankthoeny/http_client_welcome)
 
 ## JS Libraries and Frameworks
-Using Bootstrap 4, Popper and Font Awesome. JQuery is still provided in Drupal 8/9. 
+~~Using Bootstrap 4, Popper and Font Awesome. JQuery is still provided in Drupal 8/9.~~ 
+Currently, no need for JS, but can implement in the Yaml libraries and Twig theme.
 
 ## CSS Styling
-Styling with Bootstrap not modified.
+~~Styling with Bootstrap not modified.~~
+Using plain vanilla CSS for styling, but can implement in Yaml libraries.
 
 ## Twig Templating Engine
 Front end Built with HTML and Twig.
