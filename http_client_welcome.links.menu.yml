@@ -1,0 +1,7 @@
+http_client_welcome.find_posts:
+  weight: 10
+  title: Find posts
+  description: 'Find Posts'
+  menu_name: main
+  parent: main
+  route_name: http_client_welcome.find_posts
