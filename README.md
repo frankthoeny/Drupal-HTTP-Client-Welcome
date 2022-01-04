@@ -5,10 +5,14 @@ My Drupal 8 custom module requires the Drupal 8 contributed module HTTP Client M
 
 #### Steps to install my custom module.
 
+##### Warning: Always enable Http Client Manager first! You will have issues, if you enable Http Client Welcome first.
+
 1. Download and Install [HTTP Client Manager](https://www.drupal.org/project/http_client_manager) through Composer as recommended.
 2. Clone and Install [http_client_welcome](https://github.com/frankthoeny/http_client_welcome)
+3. Enable Http Client Manager. 
+4. Enable Http Client Welcome.
+5. Navigate to "/find-posts", there is also a menu item, "Find Posts."
 
-### Warning: Always install Http Client Manager first! You will have issues, if you install Http Client Welcome first. 
 
 ## JS Libraries and Frameworks
 ~~Using Bootstrap 4, Popper and Font Awesome. JQuery is still provided in Drupal 8/9.~~ 
