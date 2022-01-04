@@ -13,9 +13,9 @@ My Drupal 8 custom module requires the Drupal 8 contributed module HTTP Client M
 
 #### Start a new Drupal site with DDEV Composer Create-Project in 12 steps.
 Credits: 
-[^1]: Michael Anello, @ultimike, DrupalEasy, 2018
-[^2]: Italy [bmeme](http://www.bmeme.com/)
-[^3]: Minor Revision: Frank Thoeny, 2022
+1. Michael Anello, @ultimike, DrupalEasy, 2018
+2. Italy [bmeme](http://www.bmeme.com/)
+3. Minor Revision: Frank Thoeny, 2022
 
 1. Go to Powershell and run the command WSL --shutdown. 
 
